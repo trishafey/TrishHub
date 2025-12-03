@@ -1,5 +1,6 @@
 <?php
 // $viewFile comes from BaseController::view
+$isLoggedIn = isset($_SESSION['user_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +12,16 @@
     <header>
         <h1>TrishHub</h1>
         <nav>
-            <a href="/repos">Repositories</a> |
-            <a href="/login">Login</a>
+            <a href="/repos">Repositories</a>
+            <?php if ($isLoggedIn): ?>
+                |
+                <a href="/logout">Logout</a>
+            <?php else: ?>
+                |
+                <a href="/signup">Sign up</a>
+                |
+                <a href="/login">Login</a>
+            <?php endif; ?>
         </nav>
     </header>
 
