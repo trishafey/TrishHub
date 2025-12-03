@@ -1,0 +1,9 @@
+CREATE TABLE ai_tokens (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    token_hash CHAR(64) NOT NULL,
+    is_active TINYINT(1) NOT NULL DEFAULT 1,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_used_at DATETIME NULL,
+    UNIQUE KEY uniq_ai_token_hash (token_hash)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
