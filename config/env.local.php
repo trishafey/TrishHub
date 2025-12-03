@@ -1,22 +1,24 @@
 <?php
 
-// Copy this file to env.local.php and adjust values for your environment.
+// TrishHub local environment config
 
 return [
     'db' => [
         'host' => '127.0.0.1',
         'port' => 3306,
         'database' => 'trishhub',
-        'username' => 'trishhub_user',
-        'password' => 'change_me',
+        'username' => 'root',      // or your hosting DB user
+        'password' => '',          // or the password from hosting
         'charset' => 'utf8mb4',
     ],
+
     'app' => [
         'base_url' => 'http://localhost',
         'debug' => true,
     ],
+
     'paths' => [
-        'git_root' => '/srv/trishhub/repos',
-        'log_dir'  => '/var/log/trishhub',
+        'git_root' => __DIR__ . '/../repos',
+        'log_dir'  => __DIR__ . '/../logs',
     ],
 ];
