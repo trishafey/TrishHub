@@ -1,0 +1,12 @@
+# Local env
+config/env.local.php
+
+# Vendor / dependencies (future-proofing)
+vendor/
+node_modules/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
